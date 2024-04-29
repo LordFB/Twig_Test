@@ -7,11 +7,27 @@
     <title>Details</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .wrapper{
-            row-gap:25px;
+        .page {
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+            padding: 25px;
+            animation: fadeIn forwards;
+            animation-duration: 1s;
         }
-        img{
+
+        img {
             max-height: 400px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -19,12 +35,16 @@
 <body>
     <div class="wrapper">
         {% include 'nav.twig' %}
-        <img src="{{ image }}" alt="">
-        <div class="details">
-            <h1>{{ title }}</h1>
-            <p>{{ text|striptags|capitalize }}</p>
+        <div class="page">
+            <img src="{{ image }}" alt="">
+            <div class="details">
+                <h1>{{ title }}</h1>
+                <p>{{ text|striptags|capitalize }}</p>
+            </div>
+            <div>
+                <button class="button"><a href="./">Back</a></button>
+            </div>
         </div>
-        <button class="button"><a href="./">Back</a></button>
     </div>
 </body>
 

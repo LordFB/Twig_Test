@@ -9,6 +9,8 @@
         background: var(--backgroundColor);
         border-radius: var(--borderRadius);
         transition: all 0.2s;
+        animation: fadeIn forwards;
+        animation-duration: 1s;
     }
 
     .widget:hover {
@@ -56,6 +58,14 @@
         position: absolute;
         bottom: 0;
         width: 100%;
+    }
+    @keyframes fadeIn {
+        0%{
+            opacity:0;
+        }
+        100%{
+            opacity:1;
+        }
     }
 </style>
 

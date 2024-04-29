@@ -4,8 +4,8 @@
         'type' => 'mysql',
         'host' => 'localhost',
         'database' => 'twig_test',
-        'username' => 'root',
-        'password' => '',
+        'username' => 'twiguser',
+        'password' => '0LHPl3bez@7ioND1',
         'error' => PDO::ERRMODE_WARNING
     ];
 
