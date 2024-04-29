@@ -5,7 +5,8 @@
         'host' => 'localhost',
         'database' => 'twig_test',
         'username' => 'root',
-        'password' => ''
+        'password' => '',
+        'error' => PDO::ERRMODE_WARNING
     ];
 
 ?>
