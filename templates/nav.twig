@@ -1,0 +1,29 @@
+<style>
+    nav {
+        width: 100vw;
+        display: flex;
+        background: var(--buttonColor);
+    }
+
+    nav>a {
+        color: var(--textColor);
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        padding: 10px 15px;
+        background: var(--buttonColor);
+        color: var(--buttonTextColor);
+        font-weight: 400;
+        transition: all 0.2s;
+        border-left: 1px solid var(--borderColor)
+    }
+
+    nav a:hover {
+        filter: brightness(50%);
+    }
+</style>
+
+<nav>
+    {% for navItem in nav %}
+    <a href="{{ navItem.url }}">{{ navItem.text }}</a>
+    {% endfor %}
+</nav>

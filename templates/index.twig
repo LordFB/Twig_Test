@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWIG - Test</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+        .items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 25px;
+            row-gap: 25px;
+            justify-content: space-around;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        {# NAV #}
+        {{ include('nav.twig') }}
+        {# Render all the widgets from the supplied data #}
+        <div class="items">
+            {% for widgetData in data %}
+            {{ include('widget.twig') }}
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const widgets = document.querySelectorAll('.widget');
+            widgets.forEach((w, i) => {
+                let odd = i % 2 == 0;
+                w.classList.add(odd ? 'odd' : 'even');
+                const image = w.querySelector('.image');
+                w.addEventListener('mousemove', (e) => {
+                    let xOff = e.clientX - w.offsetLeft - w.clientWidth / 2;
+                    let yOff = e.clientY - w.offsetTop - w.clientHeight / 2;
+                    image.style.transform = `translateX(${xOff * -0.005}px) translateY(${yOff * -0.01}px)`;
+                }, true);
+            });
+        });
+
+        document.querySelector('.widget')
+    </script>
+</body>
+
+</html>

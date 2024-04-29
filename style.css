@@ -1,0 +1,37 @@
+:root {
+    --backgroundColor: #f4f4f4;
+    --borderColor: #5e9dcd;
+    --borderRadius: 6px;
+    --textColor: #1f1f1f;
+    --buttonColor: #447296;
+    --buttonTextColor: #f4f4f4;
+    --padding: 10px;
+    --buttonHoverColor: #2a4b64;
+    --buttonHoverTextColor: #c8c8c8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    color: var(--textColor);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

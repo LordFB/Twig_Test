@@ -1,0 +1,91 @@
+<style>
+    .widget {
+        flex: 1 0 28%;
+        height: 200px;
+        min-width: 400px;
+        display: flex;
+        padding: var(--padding);
+        outline: 1px solid var(--borderColor);
+        background: var(--backgroundColor);
+        border-radius: var(--borderRadius);
+        transition: all 0.2s;
+    }
+
+    .widget:hover {
+        z-index: 1;
+    }
+
+    .widget.odd:hover {
+        transform: perspective(1000px) rotateZ(2deg) rotateX(10deg) scale(1.1);
+        transform-origin: center center;
+    }
+
+    .widget.even:hover {
+        transform: perspective(1000px) rotateZ(-2deg) rotateX(10deg) scale(1.1);
+        transform-origin: center center;
+    }
+
+    .image {
+        background-size: 100% !important;
+        width: 200px;
+        flex-shrink: 0;
+    }
+
+    .details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-items: stretch;
+        padding: 0px 10px;
+        position: relative;
+    }
+
+    .details h1 {
+        line-height: 1em;
+    }
+
+    .details p {
+        padding: 5px 0px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        column-gap: 5px;
+        justify-self: flex-end;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .buttons button {
+        appearance: none;
+        border: 0;
+        background: var(--buttonColor);
+        color: var(--buttonTextColor);
+        padding: 10px 20px;
+        border-radius: var(--borderRadius);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .buttons button:hover {
+        filter: brightness(50%);
+    }
+
+    button.red {
+        background-color: rgb(198, 94, 94);
+    }
+</style>
+
+<div class="widget">
+    <div class="image" style="background:url({{ widgetData.image }})" alt=""></div>
+    <div class="details">
+        <h1 class="title">{{ widgetData.title }}</h1>
+        <p class="text">{{ widgetData.text|striptags|title }}</p>
+        <div class="buttons">
+            <button>GO {{ widgetData.id }}</button>
+            <button class="red">NOPE {{ widgetData.id }}</button>
+        </div>
+    </div>
+</div>
