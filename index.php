@@ -1,12 +1,14 @@
 <?php
 
+// if ( file_exists('./install.php') ){
+//     header('Location: ./install.php');
+//     exit();
+// }
+
 require_once './inc/util.php';
 
 $data = [
-    "nav" => [
-        ["text" => "Home", "url" => "./"],
-        ["text" => "Contact", "url" => "./contact"]
-    ]
+    "nav" => $nav
 ];
 
 $data['data'] = $db->select("items", [

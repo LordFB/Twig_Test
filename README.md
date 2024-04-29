@@ -1,6 +1,8 @@
-# Twig Test  
+# Simple Twig Project  
 
-Simple twig setup
+Little project to test out twig
 
-1. clone repo
+1. Clone repo
 2. ```composer install```
+3. Change config.php to your database
+4. Visit index.php

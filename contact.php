@@ -3,11 +3,8 @@ require_once './inc/util.php';
 
 $data = [
     "title" => "Contact",
-    "text" => "Lorem...",
-    "nav" => [
-        ["text" => "Home", "url" => "./"],
-        ["text" => "Contact", "url" => "./contact"]
-    ]
+    "text" => "Made by FBP",
+    "nav" => $nav
 ];
 
 echo $twig->render('contact.twig', $data);

@@ -31,23 +31,6 @@
             {% endfor %}
         </div>
     </div>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const widgets = document.querySelectorAll('.widget');
-            widgets.forEach((w, i) => {
-                let odd = i % 2 == 0;
-                w.classList.add(odd ? 'odd' : 'even');
-                const image = w.querySelector('.image');
-                w.addEventListener('mousemove', (e) => {
-                    let xOff = e.clientX - w.offsetLeft - w.clientWidth / 2;
-                    let yOff = e.clientY - w.offsetTop - w.clientHeight / 2;
-                    image.style.transform = `translateX(${xOff * -0.005}px) translateY(${yOff * -0.01}px)`;
-                }, true);
-            });
-        });
-
-        document.querySelector('.widget')
-    </script>
 </body>
 
 </html>

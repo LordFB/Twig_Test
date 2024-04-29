@@ -12,10 +12,7 @@
         "id"=>$id
     ])[0];
 
-    $data['nav'] = [
-        ["text" => "Home", "url" => "./"],
-        ["text" => "Contact", "url" => "./contact"]
-    ];
+    $data['nav'] = $nav;
     
     echo $twig->render('details.twig', $data);
 
