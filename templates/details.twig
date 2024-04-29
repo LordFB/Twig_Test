@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .wrapper{
+            row-gap:25px;
+        }
+        img{
+            max-height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        {% include 'nav.twig' %}
+        <img src="{{ image }}" alt="">
+        <div class="details">
+            <h1>{{ title }}</h1>
+            <p>{{ text|striptags|capitalize }}</p>
+        </div>
+        <button class="button"><a href="./">Back</a></button>
+    </div>
+</body>
+
+</html>

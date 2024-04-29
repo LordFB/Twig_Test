@@ -35,3 +35,27 @@ h6 {
     justify-content: center;
     flex-direction: column;
 }
+
+.button {
+    appearance: none;
+    border: 0;
+    background: var(--buttonColor);
+    color: var(--buttonTextColor);
+    border-radius: var(--borderRadius);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.button a{
+    color:var(--buttonTextColor);
+    text-decoration: none;
+    font-weight:600;
+    display: block;
+    height: 100%;
+    padding: 10px 20px;
+    display: flex;
+}
+
+.button:hover {
+    filter: brightness(50%);
+}

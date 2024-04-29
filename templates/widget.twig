@@ -57,25 +57,6 @@
         bottom: 0;
         width: 100%;
     }
-
-    .buttons button {
-        appearance: none;
-        border: 0;
-        background: var(--buttonColor);
-        color: var(--buttonTextColor);
-        padding: 10px 20px;
-        border-radius: var(--borderRadius);
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-
-    .buttons button:hover {
-        filter: brightness(50%);
-    }
-
-    button.red {
-        background-color: rgb(198, 94, 94);
-    }
 </style>
 
 <div class="widget">
@@ -84,8 +65,7 @@
         <h1 class="title">{{ widgetData.title }}</h1>
         <p class="text">{{ widgetData.text|striptags|title }}</p>
         <div class="buttons">
-            <button>GO {{ widgetData.id }}</button>
-            <button class="red">NOPE {{ widgetData.id }}</button>
+            <button class="button"><a href="./details?id={{ widgetData.id }}">Details</a></button>
         </div>
     </div>
 </div>
